@@ -3,7 +3,7 @@ namespace: tp7-kustomize
 images:
   - name: ghcr.io/raphikri/spring-petclinic
     newName: ghcr.io/raphikri/spring-petclinic
-    newTag: 4.0.1-SNAPSHOT
+    newTag: 4.0.1
 
 # Référencer la baseline (réutiliser tous les manifests de base/)
 resources:
