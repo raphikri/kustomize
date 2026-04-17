@@ -1,8 +1,8 @@
 namespace: tp7-kustomize
 
 images:
-  - name: ghcr.io/raphikri/spring-petclinic
-    newName: ghcr.io/raphikri/spring-petclinic
+  - name: ghcr.io/raphikri/petclinic-deployment
+    newName: ghcr.io/raphikri/petclinic-deployment
     newTag: 4.0.1-SNAPSHOT
 
 # Référencer la baseline (réutiliser tous les manifests de base/)
@@ -15,7 +15,7 @@ patches:
   - path: replicas.yaml
     target:
       kind: Deployment
-      name: clinic-deploy
+      name: petclinic-deployment
       
   # Type 2 : Strategic Merge Patch (patch-routing.yaml) - YAML classique, fusionne avec original
   - path: patch-routing.yaml
