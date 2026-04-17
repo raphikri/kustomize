@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: clinic-deploy
+  name: petclinic-deployment
 spec:
   template:
     spec:
