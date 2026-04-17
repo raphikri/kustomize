@@ -16,30 +16,30 @@ spec:
         - name: ghcr-secret
       containers:
         - name: petclinic
-          image: ghcr.io/raphikri/spring-petclinic:4.0.0-SNAPSHOT # Remplacez par l'image GHCR appropriée
+          image: ghcr.io/raphikri/spring-petclinic:4.0.0-SNAPSHOT
           ports:
             - containerPort: 8080
           startupProbe:
             httpGet:
-              path: /tp6/actuator/health/readiness   # Endpoint Spring Boot Actuator pour vérifier la disponibilité
-              port: 8080                               # Port d'écoute du conteneur
-            initialDelaySeconds: 10                   # Délai avant la première tentative (10s)
-            periodSeconds: 10                         # Intervalle entre les tentatives (10s)
-            timeoutSeconds: 2                         # Timeout pour chaque requête HTTP (2s)
-            failureThreshold: 30                      # Nombre d'échecs tolérés avant conclusion d'échec (30 tentatives
+              path: /tp6/actuator/health/readiness
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 30
           livenessProbe:
             httpGet:
-              path: /tp6/actuator/health/liveness   # Endpoint Spring Boot Actuator pour vérifier la vivacité
-              port: 8080                               # Port d'écoute du conteneur
-            initialDelaySeconds: 10                   # Délai avant la première tentative (10s)
-            periodSeconds: 10                         # Intervalle entre les tentatives (10s)
-            timeoutSeconds: 2                         # Timeout pour chaque requête HTTP (2s)
-            failureThreshold: 3                       # Nombre d'échecs tolérés avant conclusion d'échec (30 tentatives
+              path: /tp6/actuator/health/liveness
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
           readinessProbe:
             httpGet:
-              path: /tp6/actuator/health/readiness   # Endpoint Spring Boot Actuator pour vérifier la disponibilité
-              port: 8080                               # Port d'écoute du conteneur
-            initialDelaySeconds: 10                   # Délai avant la première tentative (10s)
-            periodSeconds: 10                         # Intervalle entre les tentatives (10s)
-            timeoutSeconds: 2                         # Timeout pour chaque requête HTTP (2s)
-            failureThreshold: 3                      # Nombre d'échecs tolérés avant conclusion d'échec (30 tentatives
+              path: /tp6/actuator/health/readiness
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
