@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-      - name: springboot
+      - name: petclinic
         # Nouvelle variable d'environnement : contexte applicatif = /tp7
         env:
         - name: SERVER_SERVLET_CONTEXT_PATH
